@@ -17,7 +17,7 @@ This API will allow you to:
 
 #### How to use:  
 1. Open the **notes-api.js** file and enter the **node notes-api.js** command  
-2. Open the index.js file to get an interactive UI that allows you to take and manage notes
+2. Open the index.html file in your browser  to get an interactive UI that allows you to take and manage notes
  
 #### Testing the API:  
 The Following require you pass in the specified parameters using the x-www-form-urlencoded option:
