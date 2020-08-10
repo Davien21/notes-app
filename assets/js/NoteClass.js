@@ -9,6 +9,10 @@ class NoteClass {
 	      /** add other headers as per requirement */
 		}
 	}
+	// getFormData(formdata) {
+	// 	formdata = formdata.split('-----------------------------');
+	// 	console.table(formdata);
+	// }
 	getAllNotes (res) {
 		this.fs.readdir(`../notes`, (err, files) => { 
 			res.writeHead(200, this.headers);

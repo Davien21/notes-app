@@ -29,16 +29,19 @@ function create_request (title,content) {
 	if (title === '' || content === '') {
 		return err_span.innerText = 'Fill both Title and Note contents';
 	} 
-	let create_form = new FormData();
-	create_form.append('name', title);
-	create_form.append('content', content)
+	let body = {
+		name: title,
+		content: content
+	}
+	// let create_form = new FormData(note_form);
+	console.log(body)
 
-	fetch(`${url}create`, {
+	fetch(`https://cors-anywhere.herokuapp.com/${url}create`, {
 	    method: 'post', // *GET, POST, PUT, DELETE, etc.
 	    headers: {
-	        "Content-Type": "text/plain",
+	        "Content-Type": "application/json",
 	    },
-	    body: create_form // body data type must match "Content-Type" header
+	    body: JSON.stringify(body) // body data type must match "Content-Type" header
 	})
 	.then (res => (res.json()))
 	.then (data => console.log(data))

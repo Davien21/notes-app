@@ -10,8 +10,12 @@ const server = http.createServer((req,res) => {
 	if (q.pathname === '/') {
 		note_handler.getAllNotes(res);
 	}else if (q.pathname !== '/' && req.method === 'POST') {
+		console.log('sc')
 		let postdata = "";
-	    req.on("data", (chunk) => {postdata += chunk.toString();console.log(postdata);});
+	    req.on("data", (chunk) => {
+	    	postdata += chunk.toString();
+	    	// console.log(postdata);
+	    });
 	    	
 	    if (q.pathname === '/create') {
 		    req.on("end", () => {
